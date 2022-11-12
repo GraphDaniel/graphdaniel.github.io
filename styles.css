@@ -1,0 +1,26 @@
+/* * {
+    margin: 0;
+} */
+
+h1,h2,h3 {
+    color: rgb(90, 11, 90);
+}
+
+main {
+    background-color: gray;
+}
+header {
+    background-color: rgb(161, 161, 161);
+}
+
+nav {
+    background-color: rgb(202, 202, 202);
+}
+
+footer {
+    background-color: rgb(82, 82, 82);
+}
+
+* {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+}
