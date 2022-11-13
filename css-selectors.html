@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./img/monsieico-whitebg.png" type="image/x-icon">
+		<link rel="stylesheet" href="styles.css">
+		<title>CSS селекторы</title>
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Главная</a>
+			<a href="html-images.html">Изображения в HTML</a>
+			<a href="tables-html.html">Таблицы в HTML</a>
+			<a href="adv-text-formatting.html">Продвинутое форматирование текста</a>
+      <a href="blogs.html">Дневник</a>
+		</nav>
+		<header>
+			<h1>CSS селекторы</h1>
+		</header>
+		<main>
+			<article>
+				<section>
+					<h2>Основные виды селекторов</h2>
+					<p>Основных видов несколько:</p>
+					<ul>
+						<li><code>*</code> - любые элементы.</li>
+						<li><code>body</code> - элементы с таким тегом.</li>
+						<li><code>#id</code> - элемент с определённым id.</li>
+						<li><code>.class</code> - элемент с определённым классом.</li>
+						<li><code>[name="value"]</code> - </li>
+						<li><code>:hover</code> - "псевдоклассы".</li>
+					</ul>
+					<h3>Комбинирование селекторов</h3>
+					<p>Селекторы комбинируются последовательной записью без пробела:</p>
+					<ul>
+						<li>
+							<code>.class1.class2</code> - элементы сразу с двумя классами <code>class1</code> и <code>class2</code>.
+						</li>
+						<li>
+							<code>body#content.class1.class2:hover</code> - элемент <code>body</code> с id <code>content</code>, классами <code>class1</code> и <code>class2</code>, псевдоклассом <code>hover</code>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Отношения</h2>
+					<p>В CSS есть четыре вида отношение между элементами:</p>
+					<ul>
+						<li><code>ul li</code> - элементы <code>li</code>, потомки элиемента <code>ul</code>.</li>
+						<li><code>ul > li</code> - элементы <code>li</code>, находящиеся именно в <code>ul</code> (непосредственные потомки).</li>
+						<li><code>.class1 ~ .class2</code> - все <code>.class2</code> на том же уровне вложенности, идут после <code>.class1</code>.</li>
+						<li><code>.class1 + .class2</code> - <code>.class2</code> на том же уровне вложенности, идёт <em>сразу</em> после <code>.class1</code>.</li>
+					</ul>
+					<div class="example">
+						<p>Пример:</p>
+						<ul class="kit">
+							<li>Набор 1 <code>.kit > li</code>
+								<ul>
+									<li>Элемент 1 <code>.kit li</code></li>
+									<li>Элемент 2 <code>.kit li</code></li>
+									<li class="bold">Элемент 3 <code>.bold</code></li>
+									<li>Элемент 4 <code>.bold ~ li</code></li>
+									<li>Элемент 5 <code>.bold ~ li</code></li>
+								</ul>
+							</li>
+							<li>Набор 2 <code>.kit > li</code>
+								<ul>
+									<li>Элемент 6 <code>.kit li</code></li>
+									<li class="italic">Элемент 7 <code>.italic</code></li>
+									<li>Элемент 8 <code>.italic + li</code></li>
+									<li>Элемент 9 (<code>.italic + li</code> уже не распространяется)</li>
+								</ul>
+							</li>
+							<li>Набор 3 <code>.kit > li</code></li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>ДОДЕЛАТЬ</h2>
+				</section>
+			</article>
+		</main>
+	</body>
+</html>	

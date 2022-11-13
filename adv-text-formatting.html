@@ -1,292 +1,295 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/monsieico-whitebg.png" type="image/x-icon">
-    <title>Продвинутое форматирование текста</title>
-  </head>
-  <body>
-    <style>
-      pre,
-      code,
-      var,
-      kbd,
-      samp {
-        font-family: "Courier New", "Courier", monospace;
-        color: #6a2cce;
-      }
-      var {
-        color: firebrick;
-      }
-      kbd {
-        color: darkcyan;
-      }
-      samp {
-        color: blue;
-      }
-    </style>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./img/monsieico-whitebg.png" type="image/x-icon">
+		<link rel="stylesheet" href="styles.css">
+		<title>Продвинутое форматирование текста</title>
+	</head>
+	<body>
+		<style>
+			pre,
+			code,
+			var,
+			kbd,
+			samp {
+				font-family: "Courier New", "Courier", monospace;
+				color: #6a2cce;
+			}
+			var {
+				color: firebrick;
+			}
+			kbd {
+				color: darkcyan;
+			}
+			samp {
+				color: blue;
+			}
+		</style>
 
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="html-images.html">Изображения в HTML</a>
-      <a href="tables-html.html">Таблицы в HTML</a>
-    </nav>
-    <header>
-      <h1>Продвинутое форматирование текста (это всё семантика)</h1>
-    </header>
+		<nav>
+			<a href="index.html">Главная</a>
+			<a href="html-images.html">Изображения в HTML</a>
+			<a href="tables-html.html">Таблицы в HTML</a>
+			<a href="css-selectors.html">CSS селекторы</a>
+      <a href="blogs.html">Дневник</a>
+		</nav>
+		<header>
+			<h1>Продвинутое форматирование текста (это всё семантика)</h1>
+		</header>
+		
+		<main>
+			<article>
+				<section>
+					<h2>Списки описания</h2>
+					<ul>
+						<li>
+							Сам список описания - <code>&lt;dl&gt;</code> (description list)
+						</li>
+						<li>
+							Термин - <code>&lt;dt&gt;</code> (description item - термин для описания)
+						</li>
+						<li>
+							Определение - <code>&lt;dd&gt;</code> (description definition - описание определения). У одного термина может быть несколько определений
+						</li>
+					</ul>
+					<p>Пример:</p>
+					<dl>
+						<dt>Солилоквий</dt>
+						<dd>
+							Драматическая речь, в которой персонаж разговаривает сам с собой,
+							передавая свои ощущения и мысли публике (но не другим персонажам).
+						</dd>
+						<dt>Монолог</dt>
+						<dd>
+							Драматическая речь, в которой персонаж передаёт свои мысли публике и
+							некоторым персонажам.
+						</dd>
+						<dt>Ремарка</dt>
+						<dd>
+							В драме: речь персонажа, при которой делается замечание с юмористическим
+							или драматическим эффектом; чаще всего это чувства, мысли или
+							предпосылки к чему-либо.
+						</dd>
+						<dd>В письменности: отметка, примечание (устар.).</dd>
+					</dl>
+				</section>
+				<section>
+					<h2>Цитаты</h2>
+				</section>
+				<section>
+					<h3>Блочные цитаты</h3>
+						<p>
+							Сама цитата - <code>&lt;blockquote&gt;</code>. Используется для
+							цитирования из другого источника. Чтобы указать источник цитаты - атрибут <code>cite</code>.
+						</p>
+						<p>
+							Пример: следующая разметка берётся из страницы элемента MDN <code>&lt;blockquote&gt;</code>:
+						</p>
+					<blockquote cite="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote">
+						<p>
+								<strong>HTML-элемент <code>&lt;blockquote&gt;</code></strong> (от англ. <em>HTML Block Quotation Element</em>) указывает на то, что заключённый в нём текст является развёрнутой цитатой.
+						</p>
+					</blockquote>
+				</section>
+				<section>
+					<h3>Строчные цитаты</h3>
+					<p>
+						Работают точно также, но используют <code>&lt;q&gt;</code>. По умолчанию:
+						помещает текст в кавычки и не прерывает абзац.
+					</p>
+					<p>
+						Пример: следующий кусочек разметки содержит цитату из страницы <code>&lt;q&gt;</code> MDN:
+					</p>
+					<p>
+						Элемент цитирования — <code>&lt;q&gt;</code> —
+						<q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+						предназначен для коротких цитат, не требующих прерывания абзаца
+						</q>.
+					</p>
+					
+				</section>
+				<section>
+					<h3>Цитирование</h3>
+					<p>
+						Атрибут <code>cite</code> не может быть отображён браузером без танцев с
+						бубном (JS/CSS). Поэтому, чтобы указать источник цитирования можно
+						использовать тег <code>&lt;cite&gt;</code>.
+					</p>
+					<p>Пример:</p>
+					<p>
+						Как указано в статье о
+						<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote">
+							<cite>блочных цитатах</cite> 
+						</a>:
+					</p>
+					
 
-    <main>
-      <article>
-        <section>
-          <h2>Списки описания</h2>
-          <ul>
-            <li>
-              Сам список описания - <code>&lt;dl&gt;</code> (description list)
-            </li>
-            <li>
-              Термин - <code>&lt;dt&gt;</code> (description item - термин для описания)
-            </li>
-            <li>
-              Определение - <code>&lt;dd&gt;</code> (description definition - описание определения). У одного термина может быть несколько определений
-            </li>
-          </ul>
-          <p>Пример:</p>
-          <dl>
-            <dt>Солилоквий</dt>
-            <dd>
-              Драматическая речь, в которой персонаж разговаривает сам с собой,
-              передавая свои ощущения и мысли публике (но не другим персонажам).
-            </dd>
-            <dt>Монолог</dt>
-            <dd>
-              Драматическая речь, в которой персонаж передаёт свои мысли публике и
-              некоторым персонажам.
-            </dd>
-            <dt>Ремарка</dt>
-            <dd>
-              В драме: речь персонажа, при которой делается замечание с юмористическим
-              или драматическим эффектом; чаще всего это чувства, мысли или
-              предпосылки к чему-либо.
-            </dd>
-            <dd>В письменности: отметка, примечание (устар.).</dd>
-          </dl>
-        </section>
-        <section>
-          <h2>Цитаты</h2>
-        </section>
-        <section>
-          <h3>Блочные цитаты</h3>
-            <p>
-              Сама цитата - <code>&lt;blockquote&gt;</code>. Используется для
-              цитирования из другого источника. Чтобы указать источник цитаты - атрибут <code>cite</code>.
-            </p>
-            <p>
-              Пример: следующая разметка берётся из страницы элемента MDN <code>&lt;blockquote&gt;</code>:
-            </p>
-          <blockquote cite="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote">
-            <p>
-                <strong>HTML-элемент <code>&lt;blockquote&gt;</code></strong> (от англ. <em>HTML Block Quotation Element</em>) указывает на то, что заключённый в нём текст является развёрнутой цитатой.
-            </p>
-          </blockquote>
-        </section>
-        <section>
-          <h3>Строчные цитаты</h3>
-          <p>
-            Работают точно также, но используют <code>&lt;q&gt;</code>. По умолчанию:
-            помещает текст в кавычки и не прерывает абзац.
-          </p>
-          <p>
-            Пример: следующий кусочек разметки содержит цитату из страницы <code>&lt;q&gt;</code> MDN:
-          </p>
-          <p>
-            Элемент цитирования — <code>&lt;q&gt;</code> —
-            <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
-            предназначен для коротких цитат, не требующих прерывания абзаца
-            </q>.
-          </p>
-          
-        </section>
-        <section>
-          <h3>Цитирование</h3>
-          <p>
-            Атрибут <code>cite</code> не может быть отображён браузером без танцев с
-            бубном (JS/CSS). Поэтому, чтобы указать источник цитирования можно
-            использовать тег <code>&lt;cite&gt;</code>.
-          </p>
-          <p>Пример:</p>
-          <p>
-            Как указано в статье о
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/blockquote">
-              <cite>блочных цитатах</cite> 
-            </a>:
-          </p>
-          
+					<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+						<p>
+							<strong>HTML-элемент<code>&lt;blockquote&gt;</code></strong> (от англ.
+							<em>HTML Block Quotation Element</em>) указывает на то, что заключённый
+							в нем текст является развёрнутой цитатой.
+						</p>
+					</blockquote>
 
-          <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
-            <p>
-              <strong>HTML-элемент<code>&lt;blockquote&gt;</code></strong> (от англ.
-              <em>HTML Block Quotation Element</em>) указывает на то, что заключённый
-              в нем текст является развёрнутой цитатой.
-            </p>
-          </blockquote>
+					<p>
+						Элемент цитирования — <code>&lt;q&gt;</code> —
+						<q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+							предназначен для коротких цитат, не требующих прерывания абзаца.
+						</q>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+							<cite>Строчные цитаты</cite>
+						</a>
+					</p>
+				</section>
+				<section>
+					<h3>Аббревиатуры</h3>
+					<p>
+						<code>&lt;abbr&gt;</code> используют для обёртывания аббревиатур и
+						акронимов с полной расшифровкой атрибутом <code>title</code>.
+					</p>
+					<p>Пример:</p>
+					<p>
+						Мы используем <abbr title="Hypertext Markup Language">HTML</abbr> для
+						структурирования наших веб-документов.
+					</p>
+					<p>
+						Я думаю, <abbr title="Почтенный">Почт.</abbr> Грин сделал это на кухне с
+						бензопилой.
+					</p>
+				</section>
+				<section>
+					<h3>Разметка контактных данных</h3>
+					<p>
+						<code>&lt;address&gt;</code> используют для обёртки контактных данных
+						автора страницы.
+					</p>
+					<p>Пример:</p>
+					<address>
+						<p>
+							Автор страницы — <a href="https://vk.com/monsieurdaniel" target="_blank">Данил Ворошилов</a>.
+						</p>
+					</address>
+				</section>
+				<section>
+					<h3>Верхний и нижний индекс</h3>
+					<p>
+						Верхний - <code>&lt;sup&gt;</code>. Нижний - <code>&lt;sub&gt;</code>
+					</p>
+					<p>Пример:</p>
+					<p>Я просыпаюсь в 7<sup>00</sup> часов утра.</p>
+					<p>
+						Химическая формула кофеина:
+						C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+					</p>
+					<p>Если x<sup>2</sup> равно 9, x должен равняться 3 или -3.</p>
+				</section>
+				<section>
+					<h3>Представление компьютерного кода</h3>
+					<ul>
+						<li>
+							<code>&lt;code&gt;</code>: Для разметки общих частей компьютерного кода.
+						</li>
+						<li>
+							<code>&lt;pre&gt;</code>: Для сохранения пробелов идентично тому, как в редакторе.
+						</li>
+						<li>
+							<code>&lt;var&gt;</code>: Для конкретной маркировки имён переменных.
+						</li>
+						<li>
+							<code>&lt;kbd&gt;</code>: Для маркировки ввода с клавиатуры (и других типов).
+						</li>
+						<li>
+							<code>&lt;samp&gt;</code>: Для маркировки вывода компьютерной программы.
+						</li>
+					</ul>
+					<p>Пример:</p>
+					<pre>
+						<code>
+							var para = document.querySelector('p');
+							para.onclick = function() {
+								alert('Owww, stop poking me!');
+								}	 
+						</code>
+					</pre>
+					<p>
+						You shouldn't use presentational elements like
+						<code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.
+					</p>
 
-          <p>
-            Элемент цитирования — <code>&lt;q&gt;</code> —
-            <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
-              предназначен для коротких цитат, не требующих прерывания абзаца.
-            </q>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
-              <cite>Строчные цитаты</cite>
-            </a>
-          </p>
-        </section>
-        <section>
-          <h3>Аббревиатуры</h3>
-          <p>
-            <code>&lt;abbr&gt;</code> используют для обёртывания аббревиатур и
-            акронимов с полной расшифровкой атрибутом <code>title</code>.
-          </p>
-          <p>Пример:</p>
-          <p>
-            Мы используем <abbr title="Hypertext Markup Language">HTML</abbr> для
-            структурирования наших веб-документов.
-          </p>
-          <p>
-            Я думаю, <abbr title="Почтенный">Почт.</abbr> Грин сделал это на кухне с
-            бензопилой.
-          </p>
-        </section>
-        <section>
-          <h3>Разметка контактных данных</h3>
-          <p>
-            <code>&lt;address&gt;</code> используют для обёртки контактных данных
-            автора страницы.
-          </p>
-          <p>Пример:</p>
-          <address>
-            <p>
-              Автор страницы — <a href="https://vk.com/monsieurdaniel" target="_blank">Данил Ворошилов</a>.
-            </p>
-          </address>
-        </section>
-        <section>
-          <h3>Верхний и нижний индекс</h3>
-          <p>
-            Верхний - <code>&lt;sup&gt;</code>. Нижний - <code>&lt;sub&gt;</code>
-          </p>
-          <p>Пример:</p>
-          <p>Я просыпаюсь в 7<sup>00</sup> часов утра.</p>
-          <p>
-            Химическая формула кофеина:
-            C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
-          </p>
-          <p>Если x<sup>2</sup> равно 9, x должен равняться 3 или -3.</p>
-        </section>
-        <section>
-          <h3>Представление компьютерного кода</h3>
-          <ul>
-            <li>
-              <code>&lt;code&gt;</code>: Для разметки общих частей компьютерного кода.
-            </li>
-            <li>
-              <code>&lt;pre&gt;</code>: Для сохранения пробелов идентично тому, как в редакторе.
-            </li>
-            <li>
-              <code>&lt;var&gt;</code>: Для конкретной маркировки имён переменных.
-            </li>
-            <li>
-              <code>&lt;kbd&gt;</code>: Для маркировки ввода с клавиатуры (и других типов).
-            </li>
-            <li>
-              <code>&lt;samp&gt;</code>: Для маркировки вывода компьютерной программы.
-            </li>
-          </ul>
-          <p>Пример:</p>
-          <pre>
-            <code>
-              var para = document.querySelector('p');
-              para.onclick = function() {
-                alert('Owww, stop poking me!');
-                }   
-            </code>
-          </pre>
-          <p>
-            You shouldn't use presentational elements like
-            <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.
-          </p>
+					<p>
+						In the above JavaScript example, <var>para</var> represents a paragraph
+						element.
+					</p>
 
-          <p>
-            In the above JavaScript example, <var>para</var> represents a paragraph
-            element.
-          </p>
+					<p>
+						Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.
+					</p>
 
-          <p>
-            Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.
-          </p>
-
-          <pre>
-            $ <kbd>ping mozilla.org</kbd>
-            <samp>
-              PING mozilla.org (63.245.215.20): 56 data bytes
-              64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms
-            </samp>
-          </pre>
-        </section>
-        <section>
-          <h3>Разметка времени и даты</h3>
-          <p>
-            <code>&lt;time&gt;</code> для отметки времени и дат в машиночитаемом
-            формате.
-          </p>
-          <p>Пример: (F12 в помощь)</p>
-          <ul>
-            <li>
-                <!-- Стандартная дата -->
-                <code>&lt;time datetime="2020-01-20"&gt;</code>20 Января 2020<code>&lt;/time&gt;</code>
-            </li>
-            <li>
-                <!-- Только год и месяц -->
-                <code>&lt;time datetime="2020-01"&gt;</code> Январь 2020<code>&lt;/time&gt;</code>
-            </li>  
-            <li>
-              <!-- Только месяц и день -->
-              <code>&lt;time datetime="01-20"&gt;</code>20 Января<code>&lt;/time&gt;</code> <br>
-            </li>
-            <li>
-              <!-- Только время, часы и минуты -->
-              <code>&lt;time datetime="19:30"&gt;</code>19:30<code>&lt;/time&gt;</code> <br>
-            </li>
-            <li>
-              <!-- Также вы можете отобразить секунды и миллисекунды! -->
-              <code>&lt;time datetime="19:30:01.856"&gt;</code>19:30:01.856<code>&lt;/time&gt;</code> <br>
-            </li>
-            <li>
-              <!-- Дата и время -->
-              <code>&lt;time datetime="2020-01-20T19:30"&gt;</code>7.30pm, 20 Января 2020<code>&lt;/time&gt;</code> <br>
-            </li>
-            <li>
-              <!-- Дата и время со смещением по часовому поясу -->
-              <code>&lt;time datetime="2020-01-20T19:30+01:00"&gt;</code>7.30pm, 20 Января 2020, — это 8.30pm во Франции.<code>&lt;/time&gt;</code>
-            </li>
-            <li>
-              <!-- Вызов номера недели -->
-              <code>&lt;time datetime="2020-W04"&gt;</code>Четвёртая неделя 2020<code>&lt;/time&gt;</code> <br>
-            </li>
-          </ul>
-        </section>
-      </article>
-    </main>
-    <footer>
-      <address>
-        <p>
-          Автор страницы —
-          <a href="https://vk.com/monsieurdaniel" target="_blank">
-            Данил Ворошилов</a>.
-          <a href="https://github.com/GraphDaniel">Мой GitHub</a>
-        </p>
-      </address>
-    </footer>
-  </body>
+					<pre>
+						$ <kbd>ping mozilla.org</kbd>
+						<samp>
+							PING mozilla.org (63.245.215.20): 56 data bytes
+							64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms
+						</samp>
+					</pre>
+				</section>
+				<section>
+					<h3>Разметка времени и даты</h3>
+					<p>
+						<code>&lt;time&gt;</code> для отметки времени и дат в машиночитаемом
+						формате.
+					</p>
+					<p>Пример: (F12 в помощь)</p>
+					<ul>
+						<li>
+								<!-- Стандартная дата -->
+								<code>&lt;time datetime="2020-01-20"&gt;</code>20 Января 2020<code>&lt;/time&gt;</code>
+						</li>
+						<li>
+								<!-- Только год и месяц -->
+								<code>&lt;time datetime="2020-01"&gt;</code> Январь 2020<code>&lt;/time&gt;</code>
+						</li>	
+						<li>
+							<!-- Только месяц и день -->
+							<code>&lt;time datetime="01-20"&gt;</code>20 Января<code>&lt;/time&gt;</code> <br>
+						</li>
+						<li>
+							<!-- Только время, часы и минуты -->
+							<code>&lt;time datetime="19:30"&gt;</code>19:30<code>&lt;/time&gt;</code> <br>
+						</li>
+						<li>
+							<!-- Также вы можете отобразить секунды и миллисекунды! -->
+							<code>&lt;time datetime="19:30:01.856"&gt;</code>19:30:01.856<code>&lt;/time&gt;</code> <br>
+						</li>
+						<li>
+							<!-- Дата и время -->
+							<code>&lt;time datetime="2020-01-20T19:30"&gt;</code>7.30pm, 20 Января 2020<code>&lt;/time&gt;</code> <br>
+						</li>
+						<li>
+							<!-- Дата и время со смещением по часовому поясу -->
+							<code>&lt;time datetime="2020-01-20T19:30+01:00"&gt;</code>7.30pm, 20 Января 2020, — это 8.30pm во Франции.<code>&lt;/time&gt;</code>
+						</li>
+						<li>
+							<!-- Вызов номера недели -->
+							<code>&lt;time datetime="2020-W04"&gt;</code>Четвёртая неделя 2020<code>&lt;/time&gt;</code> <br>
+						</li>
+					</ul>
+				</section>
+			</article>
+		</main>
+		<footer>
+			<address>
+				<p>
+					Автор страницы —
+					<a href="https://vk.com/monsieurdaniel" target="_blank">
+						Данил Ворошилов</a>.
+					<a href="https://github.com/GraphDaniel">Мой GitHub</a>
+				</p>
+			</address>
+		</footer>
+	</body>
 </html>
