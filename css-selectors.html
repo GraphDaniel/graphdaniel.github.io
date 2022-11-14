@@ -21,8 +21,28 @@
 		</header>
 		<main>
 			<article>
+				<nav>
+					<p>Содержание:</p>
+					<ul>
+						<li><a href="#main-selectors">Основные виды селекторов</a>
+							<ul>
+								<li><a href="#combinations">Комбинирование селекторов</a></li>
+							</ul>
+						</li>
+						<li><a href="#relations">Отношения</a></li>
+						<li><a href="#filters">Фильтры</a>
+							<ul>
+								<li><a href="#neighbours">Фильтры по месту среди соседей</a></li>
+								<li><a href="#certain-neighbours">Фильтр по месту соседей с таким же тегом</a></li>
+							</ul>
+						</li>
+						<li><a href="#attribute-selectors">Селекторы атрибутов</a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					</ul>
+				</nav>
 				<section>
-					<h2>Основные виды селекторов</h2>
+					<h2 id="main-selectors">Основные виды селекторов</h2>
 					<p>Основных видов несколько:</p>
 					<ul>
 						<li><code>*</code> - любые элементы.</li>
@@ -32,7 +52,7 @@
 						<li><code>[name="value"]</code> - </li>
 						<li><code>:hover</code> - "псевдоклассы".</li>
 					</ul>
-					<h3>Комбинирование селекторов</h3>
+					<h3 id="combinations">Комбинирование селекторов</h3>
 					<p>Селекторы комбинируются последовательной записью без пробела:</p>
 					<ul>
 						<li>
@@ -44,7 +64,7 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Отношения</h2>
+					<h2 id="relations">Отношения</h2>
 					<p>В CSS есть четыре вида отношение между элементами:</p>
 					<ul>
 						<li><code>ul li</code> - элементы <code>li</code>, потомки элиемента <code>ul</code>.</li>
@@ -77,9 +97,91 @@
 					</div>
 				</section>
 				<section>
+					<h2 id="filters">Фильтры</h2>
+				</section>
+				<section>
+					<h3 id="neighbours">Фильтры по месту среди соседей</h3>
+					<ul>
+						<li><code>:first-child</code> - первый потомок своего родителя.</li>
+						<li><code>:last-child</code> - последний потомок своего родителя.</li>
+						<li><code>:only-child</code> - единственный потомок своего родителя, без соседних элементов.</li>
+						<li><code>:nth-child(b)</code> - потомок номер <code>a</code> своего родителя (нумерация с 1).</li>
+						<li><code>:nth-child(an+b</code> - потомки по формуле, где <code>a</code>, <code>b</code> - константы, <code>n</code> - любое целое число:
+							<ul>
+								<li><code>:nth-child(2n)</code> - выдаст чётные элементы <code>2</code>, <code>4</code>, <code>6</code>...</li>
+								<li><code>:nth-child(2n+1)</code> - выдаст нечётные элементы <code>1</code>, <code>3</code>, <code>5</code>...</li>
+								<li><code>:nth-child(3n+2)</code> - выдаст элементы <code>2</code>, <code>5</code>, <code>8</code>...</li>
+							</ul>
+						</li>
+					</ul>
+					<p>Пример:</p>
+					<div class="example">
+						<style>
+							li.childex:nth-child(2n) {
+								background:yellowgreen;
+							}
+							li.childex:nth-child(2n+1) {
+								background:violet;
+							}
+							li.childex:first-child {
+								font-style: italic;
+							}
+							li.childex:last-child {
+								font-weight: bold;
+							}
+						</style>
+						<ul>
+							<li class="childex">1 - нечётный; первый потомок</li>
+							<li class="childex">2 - чётный</li>
+							<li class="childex">3 - нечётный</li>
+							<li class="childex">4 - чётный</li>
+							<li class="childex">5 - нечётный</li>
+							<li class="childex">6 - чётный</li>
+							<li class="childex">7 - нечётный</li>
+							<li class="childex">8 - чётный</li>
+							<li class="childex">9 - нечётный</li>
+							<li class="childex">10 - чётный; последний потомок</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3 id="certain-neighbours">Фильтр по месту соседей с таким же тегом</h3>
+					<p>Они подсчитывают только элементы с фильтром:</p>
+					<ul>
+						<li><code>:first-of-type</code></li>
+						<li><code>:last-of-type</code></li>
+						<li><code>:only-of-type</code></li>
+						<li><code>:nth-of-type</code></li>
+						<li><code>:nth-last-of-type</code></li>
+					</ul>
+				</section>
+				<section>
+					<h2 id="attribute-selectors">Селекторы атрибутов</h2>
+					<ul>
+						<li><code>[attr]</code> - конкретный атрибут.</li>
+						<li><code>[attr="monsie"]</code> - атрибут со значением <code>monsie</code>.</li>
+						<li><code>[attr^="monsie"]</code> - атрибут начинается с <code>monsie</code>.</li>
+						<li><code>[attr|="monsie"]</code> - атрибут со значением <code>monsie</code> или начинается с <code>monsie-</code>.</li>
+						<li><code>[attr*="monsie"]</code> - атрибут содержит <code>monsie</code> (<code>"immonsieur"</code>).</li>
+						<li><code>[attr~="monsie"]</code> - атрибут содержит <code>monsie</code> через пробел (<code>"im monsie"</code>).</li>
+						<li><code>[attr$="monsie"]</code> - атрибут заканчивается на <code>monsie</code>.</li>
+					</ul>
+				</section>
+				<section>
 					<h2>ДОДЕЛАТЬ</h2>
 				</section>
 			</article>
 		</main>
+		<footer>
+			<address>
+				<p>
+					Автор страницы —
+					<a href="https://vk.com/monsieurdaniel" target="_blank">
+						Данил Ворошилов
+					</a>,
+					<a href="https://github.com/GraphDaniel">Мой GitHub</a>.
+				</p>
+			</address>
+		</footer>
 	</body>
 </html>	
