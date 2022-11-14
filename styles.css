@@ -79,3 +79,28 @@ div.example {
 .italic + li {
     color: rgb(93, 128, 58);
 }
+
+h2:target,
+h3:target {
+    border: 3px solid yellowgreen;
+    background-color: yellowgreen;
+}
+
+h2:target::before,
+h2:target::after,
+h3:target::before,
+h3:target::after {
+    content: "🤠🔎";
+}
+
+a:link,
+a:visited,
+a:active {
+    color: rgb(255, 0, 255);
+}
+
+@media (min-width: 2000px) {
+    body {
+        background-color: black;
+    }
+}
