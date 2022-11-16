@@ -1,6 +1,6 @@
-/* * {
-    margin: 0;
-} */
+* {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+}
 
 h1,h2,h3 {
     color: rgb(90, 11, 90);
@@ -8,6 +8,7 @@ h1,h2,h3 {
 
 body {
     background: rgb(124, 124, 248);
+    margin: 0 auto;
 }
 
 main {
@@ -28,22 +29,87 @@ section {
     border: 2px solid rgb(20, 104, 104);
 }
 
-header {
+header.title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 255, 255);
 }
 
-nav {
-    background-color: rgb(255, 255, 255);
-    width: 800px;
-    margin: 0 auto;
+header.title-header figure {
+    margin: 0 10px;
+    text-align: end;
+    width: 15%;
 }
 
+nav.title > figure > img {
+    width: 100%;
+}
+
+.title-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+header.title-header img {
+    width: inherit;
+}
+
+header.title-header a,
+header.title-header a:visited,
+header.title-header a:hover {
+    color: black;
+}
+/* 
+Навигация с выпадающим списком 
+*/
+nav.title {
+    display: flex;
+    align-items: center;
+    width: 15%;
+    
+}
+nav.title > a {
+    text-decoration: none;
+    padding: 1px 4px;
+}
+
+.drop-btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+    
+}
+
+.dropdown-content > a {
+    padding: 2px 5px;
+    text-decoration: none;
+}
+
+.dropdown-content > a:hover,
+.dropdown:hover,
+nav.title > a:hover {
+    background-color: plum;
+}
+/*
+====================
+*/
 footer {
     background-color: rgb(243, 96, 96);
-}
-
-* {
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 }
 
 pre,
@@ -96,8 +162,3 @@ h3:target::after {
     content: "🤠🔎";
 }
 
-a:link,
-a:visited,
-a:active {
-    color: rgb(255, 0, 255);
-}
