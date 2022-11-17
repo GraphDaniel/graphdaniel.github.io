@@ -3,29 +3,34 @@
 }
 
 h1,h2,h3 {
-    color: rgb(90, 11, 90);
+    color: rgb(255, 45, 255);
+    text-shadow:rgba(255, 255, 255, 0.123) 0px 5px 35px;
 }
 
 body {
     background: rgb(124, 124, 248);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(#485563,#29323c);
+    color: #fff;
 }
 
 main {
-    background-color: rgb(172, 152, 152);
     border: #6a2cce solid;
-    width: 800px;
     margin: 0 auto;
-    min-height: 601px;
+    flex: 1;
 }
 
 article {
-    background-color: rgb(238, 204, 238);
+    /* background-color: rgb(238, 204, 238); */
     border: 3px solid black;
+    width: 60vw;
 }
 
 section {
-    background-color: rgb(174, 224, 222);
+    /* background-color: rgb(174, 224, 222); */
     border: 2px solid rgb(20, 104, 104);
 }
 
@@ -108,16 +113,32 @@ nav.title > a:hover {
 /*
 ====================
 */
-footer {
-    background-color: rgb(243, 96, 96);
+
+pre {
+    white-space: pre-line;
 }
 
+pre > code {
+    border: none;
+}
+    
 pre,
 code {
     font-family: "Courier New", "Courier", monospace;
-    color: #6a2cce;
+    color: #5d00ff;
     border: 1px solid black;
-    }
+    background-color: #55616d;
+}
+var {
+    color: firebrick;
+}
+kbd {
+    color: darkcyan;
+}
+samp {
+    color: blue;
+}
+
 
 div.example {
     background-color: #fff;
