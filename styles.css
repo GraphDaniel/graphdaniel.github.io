@@ -23,9 +23,12 @@ header h1 {
 
 figure.logo a {
     display: block;
-    font-size: .75vw;
-    width: 5em;
-    height: 5em;
+    min-width: 25px;
+    min-height: 25px;
+    width: 3.75vw;
+    height: 3.75vw;
+    margin-bottom: -1.1vw;
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -58,31 +61,34 @@ section.main-info {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2em;
     margin-top: 15vh;
     
 }
 
 .main-info-text {
-    width: 55%;
+    width: 8em;
+    flex-grow: 1;
 }
 
 .main-info-text h1 {
     /* font-size: 4rem; */
-    font-size: 3.5vw;
+    font-size: 47px;
     margin: 0;
 }
 
 .main-info-text p {
     /* font-size: 3em; */
-    font-size: 2.5vw;
+    font-size: 34px;
     margin: 0;
     color: black;
 }
 
 figure.main-picture {
     margin: 0;
-    width: 45%;
-    
+    max-width: 17em;
+    flex-grow: 1;
 }
 
 figure.main-picture img {
@@ -110,16 +116,26 @@ section a:hover {
 section.main-new {
     padding: 30px 30px 10px 30px;
     margin-top: 20vh;
-    /* background-color: rgb(247, 241, 218); */
     border-radius: 15px;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
-/* section.main-new:hover {
-    transform: scale(1.01);
-} */
+
+
+section.main-new h2 {
+    margin: 0;
+    margin-top: -15px;
+
+    font-size: 1.2em;
+    line-height: 1em;
+}
 
 section.main-new h3 {
     margin: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    font-size: 1em;
+    line-height: 1em;
 }
 section.main-new h3 a {
     color: black;
@@ -130,11 +146,6 @@ section.main-new h3 a:hover {
     text-decoration: underline;
 }
 
-section.main-new h2 {
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: -10px;
-}
 section.main-new p {
     margin: 0;
     
@@ -146,7 +157,38 @@ section.main-new p {
     width: 100%;
     margin: 0;
     
-    
+}
+
+
+section.baubles {
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.baubles-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 2vw;
+    column-gap: 2vw;
+    min-height: 70vh;
+}
+
+.bauble {
+    display: block;
+    width: 8em;
+    height: 6em;
+    flex-grow: 1;
+
+    padding: 3vh;
+    color: #fff;
+    text-decoration: none;
+
+    background: rgb(0,78,255);
+    background: linear-gradient(230deg, rgba(0,78,255,1) 0%, rgba(183,0,255,1) 50%, rgba(255,0,138,1) 100%);
+    border-radius: 15px;
 }
 
 
@@ -174,13 +216,13 @@ header.title-header a:hover {
 nav.title {
     display: flex;
     align-items: center;
+    column-gap: 1em;
     font-size: 1.2em;
 }
 nav.title > a {
     text-decoration: none;
     padding: 1px 4px;
     font-weight: bold;
-    margin-right: 1em;
 }
 
 .drop-btn {
