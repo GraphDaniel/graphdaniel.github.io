@@ -1,38 +1,154 @@
 * {
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 }
+html {
+    font-size: 1em;
+}
 
 h1,h2,h3 {
-    color: rgb(255, 45, 255);
+    color: #730071; 
     text-shadow:rgba(255, 255, 255, 0.123) 0px 5px 35px;
 }
 
-body {
-    background: rgb(124, 124, 248);
+header {
+    display: flex;
+    width: 60vw;
     margin: 0 auto;
+}
+
+
+header h1 {
+    text-align: center;
+}
+
+figure.logo a {
+    display: block;
+    font-size: .75vw;
+    width: 5em;
+    height: 5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(./img/monsie.png);
+}
+figure.logo {
+    margin: 0;
+}
+
+
+
+body {
     display: flex;
     flex-direction: column;
+    
     min-height: 100vh;
-    background-image: linear-gradient(#485563,#29323c);
-    color: #fff;
+    margin: 0 auto;
 }
 
 main {
-    border: #6a2cce solid;
     margin: 0 auto;
     flex: 1;
 }
 
 article {
-    /* background-color: rgb(238, 204, 238); */
-    border: 3px solid black;
     width: 60vw;
 }
 
-section {
-    /* background-color: rgb(174, 224, 222); */
-    border: 2px solid rgb(20, 104, 104);
+section.main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    
 }
+
+.main-info-text {
+    width: 55%;
+}
+
+.main-info-text h1 {
+    /* font-size: 4rem; */
+    font-size: 3.5vw;
+    margin: 0;
+}
+
+.main-info-text p {
+    /* font-size: 3em; */
+    font-size: 2.5vw;
+    margin: 0;
+    color: black;
+}
+
+figure.main-picture {
+    margin: 0;
+    width: 45%;
+    
+}
+
+figure.main-picture img {
+    width: 100%;
+    transition: transform 0.5s 0s ease;
+}
+figure.main-picture img:hover {
+    transform: scale(1.1);
+}
+
+section{
+    font-size: 1.5em;
+    color: rgb(63, 63, 63);
+}
+
+section a {
+    text-decoration: underline;
+    font-weight: 550;
+    color: black;
+}
+section a:hover {
+    text-decoration: none;
+}
+
+section.main-new {
+    padding: 30px 30px 10px 30px;
+    margin-top: 20vh;
+    /* background-color: rgb(247, 241, 218); */
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+/* section.main-new:hover {
+    transform: scale(1.01);
+} */
+
+section.main-new h3 {
+    margin: 0;
+}
+section.main-new h3 a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+section.main-new h3 a:hover {
+    text-decoration: underline;
+}
+
+section.main-new h2 {
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: -10px;
+}
+section.main-new p {
+    margin: 0;
+    
+    color: black;
+    font-size: .75em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 0;
+    
+    
+}
+
 
 header.title-header {
     display: flex;
@@ -41,24 +157,10 @@ header.title-header {
     background-color: rgb(255, 255, 255);
 }
 
-header.title-header figure {
-    margin: 0 10px;
-    text-align: end;
-    width: 15%;
-}
-
-nav.title > figure > img {
-    width: 100%;
-}
-
 .title-header h1 {
     margin: 0;
     font-size: 1.5em;
     line-height: 1.5em;
-}
-
-header.title-header img {
-    width: inherit;
 }
 
 header.title-header a,
@@ -72,12 +174,13 @@ header.title-header a:hover {
 nav.title {
     display: flex;
     align-items: center;
-    width: 15%;
-    
+    font-size: 1.2em;
 }
 nav.title > a {
     text-decoration: none;
     padding: 1px 4px;
+    font-weight: bold;
+    margin-right: 1em;
 }
 
 .drop-btn {
@@ -85,7 +188,7 @@ nav.title > a {
     font-family: inherit;
     font-size: inherit;
     background-color: inherit;
-
+    font-weight: bold;
 }
 
 .dropdown-content {
@@ -108,11 +211,71 @@ nav.title > a {
 .dropdown-content > a:hover,
 .dropdown:hover,
 nav.title > a:hover {
-    background-color: plum;
+    text-decoration:underline;
 }
 /*
 ====================
 */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5vh;
+
+    background-color: rgb(226, 226, 226);
+}
+
+footer h2 {
+    text-align: center;
+    margin: 0 auto;
+    
+}
+footer .social-media {
+    list-style-type: none;
+}
+.social-media li {
+    display: inline-block;
+}
+.social-media {
+    padding: 0;
+}
+
+.telegram {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(./img/tg-logo-100.png);
+}
+.vk {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(./img/vk-logo-100.png);
+}
+.github {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(./img/gh-logo-100.png);
+}
+
+
+
+
 
 pre {
     white-space: pre-line;
@@ -126,8 +289,8 @@ pre,
 code {
     font-family: "Courier New", "Courier", monospace;
     color: #5d00ff;
-    border: 1px solid black;
     background-color: #55616d;
+    border-radius: 7px;
 }
 var {
     color: firebrick;
