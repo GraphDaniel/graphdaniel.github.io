@@ -174,29 +174,33 @@ section.baubles h1{
 		font-size: 36px;
 }
 
-.baubles-box {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-		row-gap: 2vw;
-		column-gap: 2vw;
+.baubles-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: 3vw;
 		min-height: 70vh;
 }
 
 .bauble {
 		display: block;
-		width: 8em;
+		
 		height: 6em;
-		flex-grow: 1;
-
-		padding: 3vh;
+		padding: 2vh;
+		
 		color: #fff;
 		text-decoration: none;
 
 		background: rgb(0,78,255);
 		background: linear-gradient(230deg, rgba(0,78,255,1) 0%, rgba(183,0,255,1) 50%, rgba(255,0,138,1) 100%);
 		border-radius: 15px;
+}
+
+
+
+.bauble div {
+		overflow: hidden;
+		text-overflow: ellipsis;
 }
 
 header.title-header {
