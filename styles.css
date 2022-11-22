@@ -176,17 +176,21 @@ section.baubles h1{
 
 .baubles-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
-		gap: 3vw;
+		grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+		gap: 1em;
 		min-height: 70vh;
+		align-items: center;
+		
+		
 }
 
 .bauble {
 		display: block;
-		
 		height: 6em;
 		padding: 2vh;
+		max-width: 350px;
+		
+		overflow: hidden;
 		
 		color: #fff;
 		text-decoration: none;
@@ -194,6 +198,7 @@ section.baubles h1{
 		background: rgb(0,78,255);
 		background: linear-gradient(230deg, rgba(0,78,255,1) 0%, rgba(183,0,255,1) 50%, rgba(255,0,138,1) 100%);
 		border-radius: 15px;
+
 }
 
 
