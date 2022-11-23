@@ -4,22 +4,20 @@
 	}
 html {
 		font-size: 1em;
+		scroll-behavior: smooth;
 }
 
 h1,h2,h3 {
 		color: #730071; 
 		text-shadow:rgba(255, 255, 255, 0.123) 0px 5px 35px;
 }
-
+/* 
+			Заголовок
+*/
 header {
 		display: flex;
 		width: 60vw;
 		margin: 0 auto;
-}
-
-
-header h1 {
-		text-align: center;
 }
 
 figure.logo a {
@@ -39,8 +37,51 @@ figure.logo {
 		margin: 0;
 }
 
+header.title-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(255, 255, 255);
+}
 
+.title-header h1 {
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
 
+header.title-header a,
+header.title-header a:visited,
+header.title-header a:hover {
+	color: black;
+}
+
+nav.title {
+	display: flex;
+	align-items: center;
+	column-gap: 1em;
+	font-size: 1.2em;
+
+}
+nav.title > a {
+	text-decoration: none;
+	padding: 0 4px;
+	padding-bottom: px;
+	font-weight: bold;
+	border-radius: 5px;
+	line-height: 1.5em;
+}
+
+nav.title > a:hover {
+	text-decoration:underline;
+}
+/* 
+			Конец заголовока
+*/
+
+/*
+			Тело сайта
+*/
 body {
 		display: flex;
 		flex-direction: column;
@@ -58,112 +99,124 @@ article {
 		width: 60vw;
 }
 
-section.main-info {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		row-gap: 2em;
-		margin-top: 15vh;
-		
-}
-
-.main-info-text {
-		width: 8em;
-		flex-grow: 1;
-}
-
-.main-info-text h1 {
-		/* font-size: 4rem; */
-		font-size: 47px;
-		margin: 0;
-}
-
-.main-info-text p {
-		/* font-size: 3em; */
-		font-size: 34px;
-		margin: 0;
-		color: black;
-}
-
-figure.main-picture {
-		margin: 0;
-		max-width: 17em;
-		flex-grow: 1;
-}
-
-figure.main-picture img {
-		width: 100%;
-		transition: transform 0.5s 0s ease;
-}
-figure.main-picture img:hover {
-		transform: scale(1.1);
-}
-
 section{
 		font-size: 1.5em;
 		color: rgb(63, 63, 63);
 }
 
-
-
 section a {
-		text-decoration: underline;
-		font-weight: 550;
-		color: black;
+	text-decoration: underline;
+	font-weight: 550;
+	color: black;
 }
 section a:hover {
-		text-decoration: none;
+	text-decoration: none;
+}
+/*
+			Конец тела
+*/
+
+/* 
+			"Основная инфа" в index.html
+*/
+section.main-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 2em;
+	margin-top: 15vh;
 }
 
+.main-info-text {
+	width: 8em;
+	flex-grow: 1;
+}
+
+.main-info-text h1 {
+	/* font-size: 4rem; */
+	font-size: 47px;
+	margin: 0;
+}
+
+.main-info-text p {
+	/* font-size: 3em; */
+	font-size: 34px;
+	margin: 0;
+	color: black;
+}
+
+figure.main-picture {
+	margin: 0;
+	max-width: 17em;
+	flex-grow: 1;
+}
+
+figure.main-picture img {
+	width: 100%;
+	transition: transform 0.5s 0s ease;
+}
+figure.main-picture img:hover {
+	transform: scale(1.1);
+}
+/* 
+			Конец 
+*/
+
+/*
+			"Последнее добавленное" в index.html
+*/
 section.main-new {
-		padding: 30px 30px 10px 30px;
-		margin-top: 20vh;
-		border-radius: 15px;
-		box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+	padding: 30px 30px 10px 30px;
+	margin-top: 20vh;
+	border-radius: 15px;
+	box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
-
 
 section.main-new h2 {
-		margin: 0;
-		margin-top: -15px;
+	margin: 0;
+	margin-top: -15px;
 
-		font-size: 1.2em;
-		line-height: 1em;
+	font-size: 1.2em;
+	line-height: 1em;
 }
 
 section.main-new h3,
 section.blogs h3 {
-		margin: 0;
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+	margin: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 
-		font-size: 1em;
-		line-height: 1em;
+	font-size: 1em;
+	line-height: 1em;
 }
 section.main-new h3 a {
-		color: black;
-		text-decoration: none;
-		font-weight: bold;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
 }
 section.main-new h3 a:hover {
-		text-decoration: underline;
+	text-decoration: underline;
 }
 
 section.main-new p {
-		margin: 0;
-		
-		color: black;
-		font-size: .75em;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		width: 100%;
-		margin: 0;
-		
+	margin: 0;
+	
+	color: black;
+	font-size: .75em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	margin: 0;
 }
+/*
+			Конец
+*/
 
-
+/*
+			Блоки в notes.html
+*/
 section.baubles {
 		display: flex;
 		flex-direction: column;
@@ -180,8 +233,6 @@ section.baubles h1{
 		gap: 1em;
 		min-height: 70vh;
 		align-items: center;
-		
-		
 }
 
 .bauble {
@@ -201,161 +252,100 @@ section.baubles h1{
 
 }
 
-
-
 .bauble div {
 		overflow: hidden;
 		text-overflow: ellipsis;
 }
-
-header.title-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		background-color: rgb(255, 255, 255);
-}
-
-.title-header h1 {
-		margin: 0;
-		font-size: 1.5em;
-		line-height: 1.5em;
-}
-
-header.title-header a,
-header.title-header a:visited,
-header.title-header a:hover {
-		color: black;
-}
-
-
-
-section.blogs article {
-		padding: 30px 30px 10px 30px;
-		border-radius: 15px;
-		box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-		font-size: 38;	 
-}
-section.blogs article h2 {
-		margin: 0;
-		margin-top: -15px;
-
-		font-size: 1.2em;
-		line-height: 1em;
-}
-section.blogs {
-		display: flex;
-		flex-direction: column;
-		row-gap: 2vw;	
-}
+/*
+			Конец Блоки в notes.html
+*/
 
 /* 
-Навигация с выпадающим списком 
+			Секции текста в blogs.html
 */
-nav.title {
-		display: flex;
-		align-items: center;
-		column-gap: 1em;
-		font-size: 1.2em;
+section.blogs article {
+	padding: 30px 30px 10px 30px;
+	border-radius: 15px;
+	box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+	font-size: 38;	 
 }
-nav.title > a {
-		text-decoration: none;
-		padding: 0 4px;
-		padding-bottom: px;
-		font-weight: bold;
-		border-radius: 5px;
-		line-height: 1.5em;
-}
+section.blogs article h2 {
+	margin: 0;
+	margin-top: -15px;
 
-.drop-btn {
-		border: none;
-		font-family: inherit;
-		font-size: inherit;
-		background-color: inherit;
-		font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1em;
 }
-
-.dropdown-content {
-		display: none;
+section.blogs {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2vw;	
 }
-
-.dropdown:hover .dropdown-content {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		background-color: #fff;
-		
-}
-
-.dropdown-content > a {
-		padding: 2px 5px;
-		text-decoration: none;
-}
-
-.dropdown-content > a:hover,
-.dropdown:hover,
-nav.title > a:hover {
-		text-decoration:underline;
-}
-/*
-====================
+/* 
+			Конец секций текста в blogs.html
 */
 
+/* 
+			Футер
+*/
 footer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-		width: 100%;
-		margin: 0 auto;
-		margin-top: 5vh;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 5vh;
 
-		background-color: rgb(226, 226, 226);
+	background-color: rgb(226, 226, 226);
 }
 
 footer h2 {
-		text-align: center;
-		margin: 0 auto;
-		
+	text-align: center;
+	margin: 0 auto;
+	
 }
 footer .social-media {
-		list-style-type: none;
+	list-style-type: none;
 }
 .social-media li {
-		display: inline-block;
+	display: inline-block;
 }
 .social-media {
-		padding: 0;
+	padding: 0;
 }
 
 .telegram {
-		display: block;
-		width: 30px;
-		height: 30px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		background-image: url(./img/tg-logo-100.png);
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url(./img/tg-logo-100.png);
 }
 .vk {
-		display: block;
-		width: 30px;
-		height: 30px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		background-image: url(./img/vk-logo-100.png);
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url(./img/vk-logo-100.png);
 }
 .github {
-		display: block;
-		width: 30px;
-		height: 30px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		background-image: url(./img/gh-logo-100.png);
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url(./img/gh-logo-100.png);
 }
-
+/* 
+			Конец футера
+*/
 
 
 
@@ -371,8 +361,8 @@ pre > code {
 pre,
 code {
 		font-family: "Courier New", "Courier", monospace;
-		color: #5d00ff;
-		background-color: #55616d;
+		color: #3E92CC;
+		background-color: #dddddd;
 		border-radius: 7px;
 }
 var {
@@ -388,7 +378,7 @@ samp {
 
 div.example {
 		background-color: #fff;
-		border: 2px solid gray;
+		border: 2px solid rgb(0, 0, 0);
 }
 
 .kit li {
@@ -428,4 +418,3 @@ h3:target::before,
 h3:target::after {
 		content: "🤠🔎";
 }
-
