@@ -11,6 +11,11 @@ h1,h2,h3 {
 		color: #730071; 
 		text-shadow:rgba(255, 255, 255, 0.123) 0px 5px 35px;
 }
+h1 {
+	font-size: 48px;
+	margin-top: 48px;
+	margin-bottom: 48px;
+}
 /* 
 			Заголовок
 */
@@ -280,6 +285,7 @@ section.blogs {
 	display: flex;
 	flex-direction: column;
 	row-gap: 2vw;	
+	width: 60vw;
 }
 /* 
 			Конец секций текста в blogs.html
